@@ -20,26 +20,6 @@ const byways = {
     }
   }
 }
-
-/*
-const parks = {
-  type: new GraphQLList(ParkType),
-  description: 'List of all matching parks.',
-  args: {
-    id: { type: GraphQLInt },
-    genre: { type: GraphQLString },
-  },
-  resolve: (p, args) => {
-    if (args.id) {
-      return _.filter(Parks, { id: args.id });
-    } else if (args.genre) {
-      return _.filter(Parks, { genre: args.genre });
-    }
-
-    return Parks;
-  },
-};
-*/
 export default {
   byways,
 };
