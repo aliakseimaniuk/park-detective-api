@@ -2,6 +2,8 @@ import { GraphQLList, GraphQLString, GraphQLInt } from 'graphql';
 import _ from 'lodash';
 import BywayType from './BywayType';
 import Byways from '../../data/byways';
+import PointsOfInterestType from './PointsOfInterestType';
+import PointsOfInterest from '../../data/pointsOfInterest';
 
 const byways = {
   type: new GraphQLList(BywayType),
@@ -20,6 +22,25 @@ const byways = {
     }
   }
 }
+
+const pointsOfInterest = {
+  type: new GraphQLList(PointsOfInterestType),
+  description: 'List all matching points of interest.',
+  args: {
+    byway: { type: GraphQLString },
+    poi: { type: GraphQLString },
+  },
+  resolve: (p, args) => {
+    if (args.byway) {
+      return _.filter(PointsOfInterest, { byway: args.byway });
+    } else if (args.poi) {
+      return _.filter(PointsOfInterest, { byway: args.poi });
+    } else {
+      return PointsOfInterest;
+    }
+  }
+}
 export default {
   byways,
+  pointsOfInterest,
 };
