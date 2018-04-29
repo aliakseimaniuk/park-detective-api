@@ -6,6 +6,8 @@ const Parks = [
       latitude: 34.225726,
       longitude: -77.94471,
     },
+    genre: 'Adventure',
+    activity: 'Hiking',
   },
   {
     id: 2,
@@ -14,7 +16,19 @@ const Parks = [
       latitude: 34.225726,
       longitude: -77.94471,
     },
+    genre: 'Romance',
+    activity: 'Picnic',
+  },
+  {
+    id: 3,
+    name: 'Park 3',
+    location: {
+      latitude: 34.225726,
+      longitude: -77.94471,
+    },
+    genre: 'Adventure',
+    activity: 'Historical significance',
   },
 ];
 
-module.exports = Parks;
+export default Parks;

@@ -4,12 +4,31 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pre-start": "npm run -s build",
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.js --exec \"node -r dotenv/config -r babel-register\"",
+    "clean": "rimraf dist",
+    "build": "npm run clean && mkdir dist && babel src -s -D -d dist"
   },
   "dependencies": {
-    "express": "^4.15.3",
-    "express-graphql": "^0.6.6",
-    "graphql": "^0.13.2",
-    "lodash": "^4.17.4"
+    "express": "4.16.3",
+    "express-graphql": "0.6.12",
+    "graphql": "0.13.2",
+    "lodash": "4.17.10"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-plugin-lodash": "3.3.2",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-export-extensions": "6.22.0",
+    "babel-plugin-transform-flow-strip-types": "6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-env": "1.6.1",
+    "babel-register": "6.26.0",
+    "dotenv": "5.0.1",
+    "nodemon": "1.17.3",
+    "rimraf": "2.6.2"
   }
 }
