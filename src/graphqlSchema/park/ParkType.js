@@ -14,5 +14,7 @@ export default new GraphQLObjectType({
     id: { type: new GraphQLNonNull(GraphQLInt) },
     name: { type: new GraphQLNonNull(GraphQLString) },
     location: { type: LocationType },
+    genre: { type: new GraphQLNonNull(GraphQLString) },
+    activity: { type: new GraphQLNonNull(GraphQLString) },
   },
 });
