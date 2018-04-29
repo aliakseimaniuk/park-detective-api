@@ -1,14 +1,17 @@
-# ParkDEtective API
-API that serves up information about Delaware parks.  
+# ParkDEtective API project
 
-#### Setup
+API that serves up information about Delaware parks.
 
-###### Pre Requisites:  
-  
-  * Git
-  * NodeJS
+[![Build Status](https://travis-ci.org/aliakseimaniuk/park-detective-api.svg?branch=develop)](https://travis-ci.org/aliakseimaniuk/park-detective-api)
 
-###### Install 
+## Setup
+
+### Pre Requisites
+
+* Git
+* NodeJS
+
+### Install
 
 ``` bash
 git clone https://github.com/aliakseimaniuk/park-detective-api.git
@@ -16,8 +19,8 @@ git clone https://github.com/aliakseimaniuk/park-detective-api.git
 npm install
 ```
 
-###### Run
+### Run
 
 ``` bash
-node server.js
+npm run dev
 ```
