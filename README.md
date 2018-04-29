@@ -3,12 +3,12 @@ API that serves up information about Delaware parks.
 
 #### Setup
 
-######Pre Requisites:  
+###### Pre Requisites:  
   
   * Git
   * NodeJS
 
-######Install 
+###### Install 
 
 ``` bash
 git clone https://github.com/aliakseimaniuk/park-detective-api.git
