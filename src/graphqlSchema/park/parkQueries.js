@@ -1,12 +1,7 @@
-import {
-  GraphQLObjectType,
-  GraphQLList,
-  GraphQLString,
-  GraphQLInt,
-} from 'graphql';
+import { GraphQLList, GraphQLString, GraphQLInt } from 'graphql';
+import _ from 'lodash';
 import ParkType from './ParkType';
 import Parks from '../../data/parks';
-import _ from 'lodash';
 
 const parks = {
   type: new GraphQLList(ParkType),

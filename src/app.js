@@ -1,7 +1,7 @@
 import express from 'express';
 import expressGraphQL from 'express-graphql';
-import schema from './graphqlSchema';
 import { printSchema } from 'graphql';
+import schema from './graphqlSchema';
 
 const app = express();
 
@@ -11,7 +11,7 @@ app.get('/graphql/schema', (req, res) => {
 
 app.use(
   '/graphql',
-  expressGraphQL(req => ({
+  expressGraphQL(() => ({
     schema,
     graphiql: true,
   })),

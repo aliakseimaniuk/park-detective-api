@@ -4,6 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
+    "fix": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
     "pre-start": "npm run -s build",
     "start": "node dist/server.js",
     "dev": "nodemon src/server.js --exec \"node -r dotenv/config -r babel-register\"",
@@ -19,6 +21,7 @@
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
+    "babel-eslint": "8.2.3",
     "babel-plugin-lodash": "3.3.2",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-export-extensions": "6.22.0",
@@ -28,7 +31,13 @@
     "babel-preset-env": "1.6.1",
     "babel-register": "6.26.0",
     "dotenv": "5.0.1",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-prettier": "2.6.0",
     "nodemon": "1.17.3",
-    "rimraf": "2.6.2"
+    "rimraf": "2.6.2",
+    "prettier": "1.12.1"
   }
 }
