@@ -1,10 +1,22 @@
-# Installation
+# ParkDEtective API
+API that serves up information about Delaware parks.  
+
+#### Setup
+
+######Pre Requisites:  
+  
+  * Git
+  * NodeJS
+
+######Install 
 
 ``` bash
+git clone https://github.com/aliakseimaniuk/park-detective-api.git
+
 npm install
 ```
 
-Run it using the following command in the root directory of your application.
+###### Run
 
 ``` bash
 node server.js
