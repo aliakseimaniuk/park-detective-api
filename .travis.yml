@@ -6,7 +6,7 @@ script:
 - npm run lint
 deploy:
   provider: heroku
-  app:
-    master: park-detective-api
   api_key:
     secure: pfl89ywlphojGlPn3fffemhPBtIVfV3AmpooaS3fG4dq0L/PRkOjBVbk9Gnao0hc716z8Qn8gqoDu1y4C/1jGrFzdIgZxLO9P7Z6/YfBfD4MDPgWynAxdwsTQCsUH3zGorAHJjA+YAVK7y41CXeGpqJV62MyI6xfh3EeLKV0FTubHmYE0iJb5yK2WWkZLJmRFMzl/hj4tLPUTW802z3I1BQNqmH119sS7EcAcyIr+BWKWjfu/+ocOXyyEAf5fkeSQIDDe1Z39x+jZKvMGyf535vOc3f7b8Wy9aQK5nkKA0Y5z8dXEDAfsaPXWTDKfV7x3F/NaJ7e7+yi7cCkbQfNa3dJ2KfukkykkOscnjAGTlN2pS0wqhInAiXo/8OOmmRVvSYJLXKbi5+4RYhmrO4SKUFRBpGn0oGItOmpeI5gJNKXws6iZZVl20bdlmOfVayOMbWz64Xzfich6w9YNmmH47HOvg5s9f+yvsd2PBabOX/eWn5Vkd4ulFh0RFc8X7JS9FKiO1o4XI33izfqmS4Q7m572LxaAO0GKMFBlufQA4TEbiEE3l9dep/dUwfQWeC8hIj8eF6Wjysrfu3DzzhatXXwtGxcQ+foqclsfmbLBuoxi0yN0YyDvm/YQ/79eJo7WBmtnLxFEhA+gbUOpe+YjWaIhnFuri6q6ig3M+lxXRg=
+  app: park-detective-api
+  on: develop
