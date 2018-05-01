@@ -6,7 +6,7 @@ const Parks = [
       latitude: 34.225726,
       longitude: -77.94471,
     },
-    genre: 'Adventure',
+    genre: 'Adventure, Romance',
     activity: 'Hiking',
   },
   {
@@ -16,7 +16,7 @@ const Parks = [
       latitude: 34.225726,
       longitude: -77.94471,
     },
-    genre: 'Romance',
+    genre: 'Romance, Recreation',
     activity: 'Picnic',
   },
   {

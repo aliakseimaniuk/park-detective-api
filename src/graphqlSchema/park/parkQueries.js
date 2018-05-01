@@ -14,7 +14,8 @@ const parks = {
     if (args.id) {
       return _.filter(Parks, { id: args.id });
     } else if (args.genre) {
-      return _.filter(Parks, { genre: args.genre });
+//      return _.filter(Parks, { genre: args.genre });
+      return _.filter(Parks, p => _.includes(p.genre, args.genre))
     }
 
     return Parks;
