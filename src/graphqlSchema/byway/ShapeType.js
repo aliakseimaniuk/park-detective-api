@@ -1,10 +1,4 @@
-import {
-  GraphQLObjectType,
-  GraphQLNonNull,
-  GraphQLFloat,
-  GraphQLList
-} from 'graphql';
-
+import { GraphQLObjectType, GraphQLNonNull, GraphQLFloat } from 'graphql';
 import GeometryType from './GeometryType';
 
 export default new GraphQLObjectType({
