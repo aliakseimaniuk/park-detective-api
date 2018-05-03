@@ -8,14 +8,13 @@ const parks = {
   description: 'List of all matching parks.',
   args: {
     id: { type: GraphQLInt },
-    genre: { type: GraphQLString },
+    activity: { type: GraphQLString },
   },
-  resolve: (p, args) => {
+  resolve: (parent, args) => {
     if (args.id) {
       return _.filter(Parks, { id: args.id });
-    } else if (args.genre) {
-//      return _.filter(Parks, { genre: args.genre });
-      return _.filter(Parks, p => _.includes(p.genre, args.genre))
+    } else if (args.activity) {
+      return _.filter(Parks, p => _.includes(p.activity, args.activity));
     }
 
     return Parks;
