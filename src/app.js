@@ -1,9 +1,11 @@
 import express from 'express';
 import cors from 'cors';
+import _ from 'lodash';
 import expressGraphQL from 'express-graphql';
 import { printSchema } from 'graphql';
 import path from 'path';
 import schema from './graphqlSchema';
+import Parks from './data/parks';
 
 const app = express();
 
@@ -29,6 +31,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.get('/', (req, res) => {
   const model = {
     currentPage: 'Home',
+    sticky: 'yes',
   };
 
   res.render('pages/index', model);
@@ -38,18 +41,27 @@ app.get('/', (req, res) => {
 app.get('/parks', (req, res) => {
   const model = {
     currentPage: 'Parks',
+    sticky: 'no',
   };
 
   res.render('pages/parks', model);
 });
 
-// parks page
+// park page
 app.get('/park/:id', (req, res) => {
+  // TODO: Move find logic to middleware service.
+  const park = _.find(Parks, p => p.id === parseInt(req.params.id, 10));
   const model = {
-    currentPage: 'Parks',
+    currentPage: park.name,
+    sticky: 'yes',
+    park,
   };
 
-  res.render('pages/parks', model);
+  if (model.park) {
+    res.render('pages/park', model);
+  } else {
+    res.render('pages/404');
+  }
 });
 
 export default app;

@@ -10,7 +10,10 @@
     <header>
       <% include ../partials/header %>
     </header>
-    park
+    <p><%= park.name %></p>
+    <p><%= park.address.streetAddress %></p>
+    <p><%= park.address.city %></p>
+    <p><%= park.address.state %></p>
     <footer>
       <% include ../partials/footer %>
     </footer>
