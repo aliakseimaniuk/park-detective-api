@@ -11,6 +11,32 @@
     <label for="check-a-{{:index}}">{{:name}}</label>
   `;
 
+  var parkTmpl = `
+    <div class="col-lg-12 col-md-12">
+      <div class="listing-item-container list-layout" data-marker-id="{{:index}}">
+        <a href="{{:parkUrl}}" class="listing-item">
+
+          <!-- Image -->
+          <div class="listing-item-image">
+            <img src="{{:imageUrl}}" alt="">
+            <span class="tag">{{:category}}</span>
+          </div>
+
+          <!-- Content -->
+          <div class="listing-item-content">
+
+            <div class="listing-item-inner">
+              <h3>{{:name}}</h3>
+              <span>{{:address}}</span>
+            </div>
+
+            <span class="like-icon"></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  `;
+
   $(document).ready(function() {
     var searchText = $.url(window.location).param('text');
     var locationText = $.url(window.location).param('location');
@@ -48,6 +74,7 @@
     _query().then(function(data) {
       initCategories(data.parkCategories.categories, category);
       initAmenities(data.parkAmenities.amenities);
+      initParks(data.parks);
     });
   });
 
@@ -129,5 +156,29 @@
     for (var i = middle; i < amenities.length; i++) {
       renderAmenity('#amenitiesFilterRight', amenities[i], i + 1);
     }
+  }
+
+  function initParks(parks) {
+    for (var i = 0; i < parks.length; i++) {
+      var item = parks[i];
+
+      var model = {
+        index: i + 1,
+        parkUrl: '/park/' + item.id,
+        imageUrl: item.mainImageUrl,
+        category: item.category[0],
+        name: item.name,
+        address: buildAddressString(item.address),
+      };
+
+      var tmpl = $.templates(parkTmpl);
+      var html = tmpl.render(model);
+      $('#parkList').append(html);
+    }
+  }
+
+  function buildAddressString(address) {
+    var s = address.streetAddress + ', ' + address.city + ' ' + address.zipCode;
+    return s;
   }
 })(this.jQuery);

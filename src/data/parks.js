@@ -88,7 +88,8 @@ const Parks = [
         closeTime: '8:00 PM',
       },
     ],
-    mainImageUrl: 'https://cdn.parkdetective.org/img/park1-main.jpg',
+    mainImageUrl:
+      'https://raw.githubusercontent.com/aliakseimaniuk/park-detective-api/develop/src/public/images/category-box-01.jpg',
     imagesUrls: [
       'https://cdn.parkdetective.org/img/park1-1.jpg',
       'https://cdn.parkdetective.org/img/park1-2.jpg',
@@ -179,7 +180,8 @@ const Parks = [
         closeTime: '8:00 PM',
       },
     ],
-    mainImageUrl: 'https://cdn.parkdetective.org/img/park1-main.jpg',
+    mainImageUrl:
+      'https://raw.githubusercontent.com/aliakseimaniuk/park-detective-api/develop/src/public/images/category-box-01.jpg',
     imagesUrls: [
       'https://cdn.parkdetective.org/img/park1-1.jpg',
       'https://cdn.parkdetective.org/img/park1-2.jpg',
@@ -187,7 +189,7 @@ const Parks = [
       'https://cdn.parkdetective.org/img/park1-4.jpg',
     ],
   },
-    {
+  {
     id: 3,
     name: 'Brown Branch County Park',
     address: {
@@ -202,7 +204,15 @@ const Parks = [
       longitude: -75.52280184399996,
     },
     category: ['Family', 'Sport', 'Nature', 'Adventure', 'Fun'],
-    activity: ['Biking', 'Baseball', 'Volleyball', 'Soccer', 'Horseshoes', 'Picnic', 'Hiking'],
+    activity: [
+      'Biking',
+      'Baseball',
+      'Volleyball',
+      'Soccer',
+      'Horseshoes',
+      'Picnic',
+      'Hiking',
+    ],
     description:
       'Browns Branch includes 38 acres of forested floodplain and 40 acres of former tilled uplands, with the latter being converted to active recreation such as baseball and soccer fields, volleyball, horseshoe, picnicking, and a youth (ages 2 through 12) playground. A mature evergreen buffer and roadside hardwood buffer have been established on the perimeter of the active recreation areas. The landscape of Kent County’s newest park is intended to provide a public site for recreation and leisure services more typical of regional parks. Along with active recreation, Browns Branch was designed to support the quiet, passive recreation and conservation elements of regional recreation pursuits such as hiking, birding, and personal solitude. A beautiful walking trail has been established which interacts with a uniquely designed wetland boardwalk. This trail terminates in a charming and picturesque public picnic area.',
     amenities: [
@@ -272,7 +282,8 @@ const Parks = [
         closeTime: '8:00 PM',
       },
     ],
-    mainImageUrl: 'https://cdn.parkdetective.org/img/park1-main.jpg',
+    mainImageUrl:
+      'https://raw.githubusercontent.com/aliakseimaniuk/park-detective-api/develop/src/public/images/category-box-01.jpg',
     imagesUrls: [
       'https://cdn.parkdetective.org/img/park1-1.jpg',
       'https://cdn.parkdetective.org/img/park1-2.jpg',
@@ -298,12 +309,7 @@ const Parks = [
     activity: ['Fishing', 'Boating', 'Picnic'],
     description:
       'Lebanon Landing Fishing, Boating Access and Recreation Area, administered by Kent County Levy Court for your use and enjoyment. This beautiful picnicking, boating, and fishing area offers enjoyment for young and old and all in-between.',
-    amenities: [
-      'Picnic Area',
-      'Bike Rack',
-      'Fishing Pier',
-      'Boating Ramp',
-    ],
+    amenities: ['Picnic Area', 'Bike Rack', 'Fishing Pier', 'Boating Ramp'],
     contactInformation: {
       manager: 'Michael S. Rigby',
       phone: '+1 (302) 744-2495',
@@ -357,7 +363,8 @@ const Parks = [
         closeTime: '8:00 PM',
       },
     ],
-    mainImageUrl: 'https://cdn.parkdetective.org/img/park1-main.jpg',
+    mainImageUrl:
+      'https://raw.githubusercontent.com/aliakseimaniuk/park-detective-api/develop/src/public/images/category-box-01.jpg',
     imagesUrls: [
       'https://cdn.parkdetective.org/img/park1-1.jpg',
       'https://cdn.parkdetective.org/img/park1-2.jpg',
@@ -365,7 +372,7 @@ const Parks = [
       'https://cdn.parkdetective.org/img/park1-4.jpg',
     ],
   },
-   {
+  {
     id: 5,
     name: 'Tidbury Creek Country Park',
     address: {
@@ -379,7 +386,7 @@ const Parks = [
       latitude: 39.113946198000065,
       longitude: -75.51322962599994,
     },
-    category: ['Family', 'Fun','Romance'],
+    category: ['Family', 'Fun', 'Romance'],
     activity: ['Hiking', 'Biking', 'Picnic', 'Fishing', 'Dog'],
     description:
       'Tidbury Creek County Park offers picnic tables, grills, playground and a park dedicated to dogs. Explore the half -mile walking trail around the pond for dogs on leashes, hoses for water bowls and two fenced areas for dogs large and small to run and play unleashed. There is no admission fee and the park is open from dawn to dusk. ',
@@ -448,7 +455,7 @@ const Parks = [
         closeTime: '8:00 PM',
       },
     ],
-    mainImageUrl: 'https://cdn.parkdetective.org/img/park1-main.jpg',
+    mainImageUrl: 'https://raw.githubusercontent.com/aliakseimaniuk/park-detective-api/develop/src/public/images/category-box-01.jpg',
     imagesUrls: [
       'https://cdn.parkdetective.org/img/park1-1.jpg',
       'https://cdn.parkdetective.org/img/park1-2.jpg',
