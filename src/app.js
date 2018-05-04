@@ -48,9 +48,10 @@ app.get('/parks', (req, res) => {
 // park page
 app.get('/park/:id', (req, res) => {
   // TODO: Move find logic to middleware service.
+  const park = _.find(Parks, p => p.id === parseInt(req.params.id, 10));
   const model = {
-    currentPage: 'Home',
-    park: _.find(Parks, p => p.id === parseInt(req.params.id, 10)),
+    currentPage: park.name,
+    park,
   };
 
   if (model.park) {

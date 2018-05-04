@@ -29,11 +29,11 @@
           <ul id="responsive">
 
             <li>
-              <a class="current" href="/">Home</a>
+              <a <%if (currentPage === 'Home') { %> class="current" <% } %> href="/">Home</a>
             </li>
 
             <li>
-              <a href="/parks">Parks</a>
+              <a <%if (currentPage === 'Parks') { %> class="current" <% } %> href="/parks">Parks</a>
             </li>
           </ul>
         </nav>
