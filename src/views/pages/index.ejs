@@ -24,7 +24,7 @@
               <div class="main-search-input">
 
                 <div class="main-search-input-item">
-                  <input type="text" placeholder="What are you looking for?" value="" />
+                  <input id="searchTextInput" type="text" placeholder="What are you looking for?" value="" />
                 </div>
 
                 <div class="main-search-input-item location">
@@ -37,17 +37,12 @@
                 </div>
 
                 <div class="main-search-input-item">
-                  <select data-placeholder="All Categories" class="chosen-select">
+                  <select id="parkCategoriesSelect" data-placeholder="All Categories" class="chosen-select">
                     <option>All Categories</option>
-                    <option>Shops</option>
-                    <option>Hotels</option>
-                    <option>Restaurants</option>
-                    <option>Fitness</option>
-                    <option>Events</option>
                   </select>
                 </div>
 
-                <button class="button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
+                <button id="searchButton" class="button">Search</button>
 
               </div>
             </div>
@@ -458,6 +453,10 @@
     </footer>
   </div>
   <% include ../partials/scripts %>
+
+  <!-- Code -->
+  <script type="text/javascript" src="scripts/code/index.js"></script>
+
 </body>
 
 </html>
