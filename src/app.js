@@ -52,7 +52,12 @@ app.get('/park/:id', (req, res) => {
     currentPage: 'Home',
     park: _.find(Parks, p => p.id === parseInt(req.params.id, 10)),
   };
-  res.render('pages/park', model);
+
+  if (model.park) {
+    res.render('pages/park', model);
+  } else {
+    res.render('pages/404');
+  }
 });
 
 export default app;
