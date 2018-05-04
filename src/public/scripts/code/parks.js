@@ -1,6 +1,16 @@
 (function($) {
   'use strict';
 
+  var categoryTmpl = `
+      <input id="check-{{:index}}" type="checkbox" name="check" {{:checked}}>
+      <label for="check-{{:index}}">{{:name}}</label>
+    `;
+
+  var amenityTmpl = `
+    <input id="check-a-{{:index}}" type="checkbox" name="check">
+    <label for="check-a-{{:index}}">{{:name}}</label>
+  `;
+
   $(document).ready(function() {
     var searchText = $.url(window.location).param('text');
     var locationText = $.url(window.location).param('location');
@@ -37,6 +47,7 @@
 
     _query().then(function(data) {
       initCategories(data.parkCategories.categories, category);
+      initAmenities(data.parkAmenities.amenities);
     });
   });
 
@@ -97,8 +108,26 @@
     $(selector).append(html);
   }
 
-  var categoryTmpl = `
-      <input id="check-{{:index}}" type="checkbox" name="check" {{:checked}}>
-      <label for="check-{{:index}}">{{:name}}</label>
-    `;
+  function renderAmenity(selector, item, index) {
+    var model = {
+      name: item,
+      index: index,
+    };
+
+    var tmpl = $.templates(amenityTmpl);
+    var html = tmpl.render(model);
+    $(selector).append(html);
+  }
+
+  function initAmenities(amenities) {
+    var middle = Math.ceil(amenities.length / 2);
+
+    for (var i = 0; i < middle; i++) {
+      renderAmenity('#amenitiesFilterLeft', amenities[i], i + 1);
+    }
+
+    for (var i = middle; i < amenities.length; i++) {
+      renderAmenity('#amenitiesFilterRight', amenities[i], i + 1);
+    }
+  }
 })(this.jQuery);
