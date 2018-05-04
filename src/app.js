@@ -32,6 +32,7 @@ app.get('/', (req, res) => {
   const model = {
     currentPage: 'Home',
     sticky: 'yes',
+    date: new Date(),
   };
 
   res.render('pages/index', model);
@@ -42,6 +43,7 @@ app.get('/parks', (req, res) => {
   const model = {
     currentPage: 'Parks',
     sticky: 'no',
+    date: new Date(),
   };
 
   res.render('pages/parks', model);
@@ -55,6 +57,7 @@ app.get('/park/:id', (req, res) => {
     currentPage: park.name,
     sticky: 'yes',
     park,
+    date: new Date(),
   };
 
   if (model.park) {

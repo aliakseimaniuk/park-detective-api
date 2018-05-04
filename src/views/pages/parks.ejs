@@ -30,7 +30,7 @@
                   <div class="col-fs-6">
                     <div class="input-with-icon">
                       <i class="sl sl-icon-magnifier"></i>
-                      <input type="text" placeholder="What are you looking for?" value="" />
+                      <input id="searchByTextInput" type="text" placeholder="What are you looking for?" value="" />
                     </div>
                   </div>
 
@@ -45,7 +45,6 @@
                       </a>
                     </div>
                   </div>
-
 
                   <!-- Filters -->
                   <div class="col-fs-12">
@@ -401,7 +400,7 @@
                 <!-- Pagination / End -->
 
                 <!-- Copyrights -->
-                <div class="copyrights margin-top-0">© 2017 Listeo. All Rights Reserved.</div>
+                <div class="copyrights margin-top-0">© <%= date.getFullYear() %> Park Detective. All Rights Reserved.</div>
 
               </div>
             </div>
@@ -422,18 +421,18 @@
       </div>
     </div>
 
-
-
     <!-- Content / End -->
 
   </div>
   <% include ../partials/scripts %>
 
     <!-- Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"></script>
     <script type="text/javascript" src="scripts/infobox.min.js"></script>
     <script type="text/javascript" src="scripts/markerclusterer.js"></script>
     <script type="text/javascript" src="scripts/maps.js"></script>
+
+    <!-- Code -->
+    <script type="text/javascript" src="scripts/parks.js"></script>
 </body>
 
 </html>
