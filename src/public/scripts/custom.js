@@ -166,11 +166,6 @@ $(document).ready(function(){
 
 		// set up a background image for each tile based on data-background-image attribute
 		$(this).children('.category-box-background').css({'background-image': 'url('+ $(this).attr('data-background-image') +')'});
-
-		// background animation on mousemove
-		// $(this).on('mousemove', function(e){
-		//   $(this).children('.category-box-background').css({'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * 100 + '% ' + ((e.pageY - $(this).offset().top) / $(this).height()) * 100 +'%'});
-		// })
 	});
 
 
@@ -395,38 +390,6 @@ $(document).ready(function(){
    	/*----------------------------------------------------*/
     /*  Slick Carousel
     /*----------------------------------------------------*/
-
-	$('.fullwidth-slick-carousel').slick({
-	  centerMode: true,
-	  centerPadding: '15%',
-	  slidesToShow: 3,
-	  dots: true,
-	  arrows: false,
-	  responsive: [
-		{
-		  breakpoint: 1441,
-		  settings: {
-		    centerPadding: '10%',
-		    slidesToShow: 3
-		  }
-		},
-		{
-		  breakpoint: 1025,
-		  settings: {
-		    centerPadding: '10px',
-		    slidesToShow: 2,
-		  }
-		},
-		{
-		  breakpoint: 767,
-		  settings: {
-		    centerPadding: '10px',
-		    slidesToShow: 1
-		  }
-		}
-	  ]
-	});
-
 
 	$('.testimonial-carousel').slick({
 	  centerMode: true,
