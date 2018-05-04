@@ -1,0 +1,426 @@
+[
+  {
+    "OBJECTID": 1,
+    "NAME": "Hunn Nature Park",
+    "Location": "(39.12475686000005, -75.49476940599999)",
+    "Category": "Family, Recreation",
+    "Feature": ["Trails"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 2,
+    "NAME": "Broad Creek Greenway",
+    "Location": "(38.559328676000064, -75.57200501099999)",
+    "Category": "Adventure",
+    "Feature": ["Trails, Hiking"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 4,
+    "NAME": "Library Park",
+    "Location": "(38.80695483900007, -75.59198543299993)",
+    "Category": "Family, Recreation",
+    "Feature": ["Library"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 5,
+    "NAME": "Mill Creek Road Open Space",
+    "Location": "(39.75790216000007, -75.67878549399995)",
+    "Category": "Adventure",
+    "Feature": ["Misc"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 6,
+    "NAME": "Middletown Village Park",
+    "Location": "(39.45811631600003, -75.73736414399997)",
+    "Category": "Adventure",
+    "Feature": ["Trails"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 7,
+    "NAME": "Christiana Village Park",
+    "Location": "(39.66582676100006, -75.66339959799996)",
+    "Category": "Family, Recreation",
+    "Feature": ["Playground"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 8,
+    "NAME": "Slaughter Beach Community Park",
+    "Location": "(38.912986852000074, -75.30551606999995)",
+    "Category": "Family, Recreation",
+    "Feature": ["Beach"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 9,
+    "NAME": "Green Valley Park",
+    "Location": "(39.70221447200004, -75.68814946499998)",
+    "Category": "Romance",
+    "Feature": ["Resevoir"],
+    "Hidden_Gem": "Y"
+  },
+  {
+    "OBJECTID": 10,
+    "NAME": "Brecknock Park",
+    "Location": "(39.12519266700008, -75.53735732799998)",
+    "Category": "Family, Recreation",
+    "Feature": ["Trails, Beach, Historic"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 11,
+    "NAME": "Lebanon Landing",
+    "Location": "(39.11400708600007, -75.49952515199999)",
+    "Category": "Family, Recreation",
+    "Feature": ["Boat, Picnic"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 12,
+    "NAME": "Lebanon Landing",
+    "Location": "(39.11436628900003, -75.49945556099993)",
+    "Category": "Family, Recreation",
+    "Feature": ["Boat, Picnic"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 16,
+    "NAME": "Arden Green",
+    "Location": "(39.812536919000024, -75.48338703799999)",
+    "Category": "Adventure Sport",
+    "Feature": ["Historical, Field"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 17,
+    "NAME": "Sherwood Green",
+    "Location": "(39.810118103000036, -75.48961742799997)",
+    "Category": "Family, Recreation",
+    "Feature": ["Garden"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 21,
+    "NAME": "Bull Hill Park",
+    "Location": "(39.66314181200005, -75.55755787999993)",
+    "Category": "Family, Recreation",
+    "Feature": ["Playground"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 22,
+    "NAME": "Buttonwood Park",
+    "Location": "(39.68315595100006, -75.55596270499996)",
+    "Category": "Adventure",
+    "Feature": ["Mystery"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 23,
+    "NAME": "Dobbinsville Park",
+    "Location": "(39.65633940400005, -75.58013494399995)",
+    "Category": "Sport",
+    "Feature": ["Soccer"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 24,
+    "NAME": "Dobbinsville Park",
+    "Location": "(39.65522972000008, -75.58000487199996)",
+    "Category": "Sport",
+    "Feature": ["Baseball"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 25,
+    "NAME": "Susi Park",
+    "Location": "(39.66191595400005, -75.57443901599999)",
+    "Category": "Sport",
+    "Feature": ["Basketball"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 28,
+    "NAME": "Ardentown Playground",
+    "Location": "(39.80797989700005, -75.48210681699999)",
+    "Category": "Family, Recreation",
+    "Feature": ["Playground"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 29,
+    "NAME": "Naamans Creek Access",
+    "Location": "(39.812649951000026, -75.48007497499998)",
+    "Category": "Adventure",
+    "Feature": ["Trails"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 38,
+    "NAME": "Alapocas Run State Park",
+    "Location": "(39.77660357100007, -75.54956250999999)",
+    "Category": "Family, Recreation, Adventure",
+    "Feature": ["Trails, Hiking, Rock-climbing"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 52,
+    "NAME": "Melody Meadows Park",
+    "Location": "(39.59222859700003, -75.75613086999994)",
+    "Category": "Family, Recreation",
+    "Feature": ["Playground, Field"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 53,
+    "NAME": "Middle Run Valley Natural Area",
+    "Location": "(39.72697664100008, -75.72594099299994)",
+    "Category": "Adventure",
+    "Feature": ["Trails, Hiking, Wetland, Wildlife, Biking"],
+    "Hidden_Gem": "Y"
+  },
+  {
+    "OBJECTID": 63,
+    "NAME": "Brandywine Mills Park",
+    "Location": "(39.74952796600007, -75.53962668499997)",
+    "Category": "Sport",
+    "Feature": ["Tennis, Basketball"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 65,
+    "NAME": "Brandywine Playground",
+    "Location": "(39.74126712900005, -75.53577769299994)",
+    "Category": "Family, Recreation",
+    "Feature": ["Playground"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 66,
+    "NAME": "Eden Park",
+    "Location": "(39.723310095000045, -75.54281432399995)",
+    "Category": "Sport, Family, Recreation",
+    "Feature": ["Basketball, Football, Playground, Parking, Baseball, Field, Pool"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 68,
+    "NAME": "Mispillion Riverwalk",
+    "Location": "(38.91510685900005, -75.41983901799995)",
+    "Category": "Family, Recreation",
+    "Feature": ["Tiny, Scenic Walk"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 96,
+    "NAME": "Elan Park",
+    "Location": "(39.678839234000066, -75.78129843199997)",
+    "Category": "Sport, Family, Recreation",
+    "Feature": ["Playground, Basketball, Field"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 97,
+    "NAME": "Hidden Valley Park",
+    "Location": "(39.69725843700007, -75.77542170099997)",
+    "Category": "Sport, Family, Recreation",
+    "Feature": ["Volleyball, Basketball, Field"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 99,
+    "NAME": "Karpinski Park",
+    "Location": "(39.692169826000054, -75.73739994799996)",
+    "Category": "Family, Recreation",
+    "Feature": ["Field"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 104,
+    "NAME": "Folk Memorial Park",
+    "Location": "(39.64630919800004, -75.75743023499996)",
+    "Category": "Sport, Family, Recreation",
+    "Feature": ["Baseball, Basketball, Tennis, Playground, Field, Parking"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 106,
+    "NAME": "Woods Haven Kruse Park",
+    "Location": "(39.80900962900006, -75.45400333999999)",
+    "Category": "Family, Recreation",
+    "Feature": ["Playground, Parking, Field"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 107,
+    "NAME": "White Clay Creek State Park",
+    "Location": "(39.74486780400008, -75.74838552199998)",
+    "Category": "Family, Recreation, Adventure",
+    "Feature": ["Trails, Scenic Walk, Hiking, Wildlife, Fishing, Birdwatching, Disc Golf, Biking, Sledding, Cross-Country Skiing, Volleyball, Restrooms, Pavilion"],
+    "Hidden_Gem": "Y"
+  },
+  {
+    "OBJECTID": 109,
+    "NAME": "Beaver Brook Crest Park",
+    "Location": "(39.64044818700006, -75.61637657799997)",
+    "Category": "Family, Recreation",
+    "Feature": ["Field"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 145,
+    "NAME": "Fox Point State Park",
+    "Location": "(39.77340620200005, -75.47909552499993)",
+    "Category": "Family, Recreation",
+    "Feature": ["Field, Playground, Parking, Scenic Walk"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 152,
+    "NAME": "Glendale Park",
+    "Location": "(39.62326382200007, -75.67153310999998)",
+    "Category": "Family, Recreation",
+    "Feature": ["Playground, Field"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 160,
+    "NAME": "Harvey Mill Park",
+    "Location": "(39.81643152800007, -75.49293524999996)",
+    "Category": "Family, Recreation",
+    "Feature": ["Field"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 163,
+    "NAME": "Alapocas Run State Park",
+    "Location": "(39.77113825300006, -75.57089410299994)",
+    "Category": "Family, Recreation, Adventure",
+    "Feature": ["Scenic Walk, Biking, Hiking, Trails, Parking, Baseball, Playground, Woodland"],
+    "Hidden_Gem": "Y"
+  },
+  {
+    "OBJECTID": 179,
+    "NAME": "Hyde Park",
+    "Location": "(39.74561663000003, -75.64994479699999)",
+    "Category": "Sport",
+    "Feature": ["Basketball"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 189,
+    "NAME": "Bellevue State Park",
+    "Location": "(39.78435455600004, -75.49477065299999)",
+    "Category": "Family, Recreation",
+    "Feature": ["Trails, Field, Playground, Parking, Pond, Volleyball"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 195,
+    "NAME": "Delcastle Recreation Area",
+    "Location": "(39.75168668200007, -75.67643780899994)",
+    "Category": "Family, Recreation, Sport",
+    "Feature": ["Soccer, Baseball, Playground, Hockey, Basketball, Tennis, Field, Scenic Walk, Restroom, Parking, Fields, Picnic"],
+    "Hidden_Gem": "Y"
+  },
+  {
+    "OBJECTID": 198,
+    "NAME": "Cape Henlopen State Park",
+    "Location": "(38.76652710400003, -75.12089378499996)",
+    "Category": "Family, Recreation, Romance, Adventure",
+    "Feature": ["Beach, Scenic Walk, Parking, Trails, Hiking, Wildlife, Fishing, Campgrounds, Fishing, Restrooms, Showers, RV Sites, Disc Golf, Picnic, Pavillion"],
+    "Hidden_Gem": "Y"
+  },
+  {
+    "OBJECTID": 199,
+    "NAME": "Fort Delaware State Park",
+    "Location": "(39.58476327100004, -75.56848946299993)",
+    "Category": "Family, Recreation, Romance, Adventure",
+    "Feature": ["Historic, Trails, Picnic, Restroom, Food"],
+    "Hidden_Gem": "Y"
+  },
+  {
+    "OBJECTID": 204,
+    "NAME": "Fenwick Island State Park",
+    "Location": "(38.45635170300005, -75.04879872399994)",
+    "Category": "Family, Recreation, Adventure",
+    "Feature": ["Beach, Boating, Food, Horse Trail, Picnic, Restrooms, Showers, Fishing, Trails"],
+    "Hidden_Gem": "Y"
+  },
+  {
+    "OBJECTID": 206,
+    "NAME": "Trap Pond State Park",
+    "Location": "(38.52416109600006, -75.50885180299997)",
+    "Category": "Family, Recreation, Adventure, Romance",
+    "Feature": ["Field, Biking, Boating, Cabins, Campground, Disc Golf, Fishing, Horse Trails, Trails, Scenic Walk, Hiking, Picnic, Pavilions, Playground, Restoom, Showers"],
+    "Hidden_Gem": "Y"
+  },
+  {
+    "OBJECTID": 210,
+    "NAME": "Brandywine Creek State Park",
+    "Location": "(39.797890755000026, -75.57293913299998)",
+    "Category": "Family, Recreation, Adventure",
+    "Feature": ["Bike Trails, Trails, Campgrounds, Disc Golf, Pavilions, Restrooms, Fishing, Hiking, Picnic"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 213,
+    "NAME": "Redden State Forest",
+    "Location": "(38.74945453300006, -75.38075365099996)",
+    "Category": "Family, Recreation, Romance",
+    "Feature": ["Historic, Lodging"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 218,
+    "NAME": "Christina Park",
+    "Location": "(39.73556052500004, -75.54179895599998)",
+    "Category": "Family, Recreation",
+    "Feature": ["Historic, Riverfront, Parking"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 268,
+    "NAME": "Seaford River Walk",
+    "Location": "(38.640627696000024, -75.60920878899998)",
+    "Category": "Recreation",
+    "Feature": ["Scenic Walk, Riverfront"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 296,
+    "NAME": "New Castle Battery Park",
+    "Location": "(39.658436100000074, -75.57478300699995)",
+    "Category": "Family, Recreation, Romance",
+    "Feature": ["Scenic Walk, Playground, Restrooms, Field, Historic, Riverfront"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 323,
+    "NAME": "Harmony Hills Park",
+    "Location": "(39.69599164400006, -75.68569583499993)",
+    "Category": "Family, Recreation, Recreation, Sports",
+    "Feature": ["Baseball, Basketball, Field, Parking, Playground"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 445,
+    "NAME": "Port Penn Wetlands Trail",
+    "Location": "(39.518158432000064, -75.57883584699994)",
+    "Category": "Family, Recreation, Romance",
+    "Feature": ["Scenic Walk, Trails, Hiking"],
+    "Hidden_Gem": "N"
+  },
+  {
+    "OBJECTID": 481,
+    "NAME": "Lumbrook Park",
+    "Location": "(39.687097950000066, -75.73143137899996)",
+    "Category": "Sports, Family, Recreation",
+    "Feature": ["Basketball, Tennis, Baseball, Playground, Picnic, Parking, Pavilion, Trails"],
+    "Hidden_Gem": "N"
+  }
+]
