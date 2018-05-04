@@ -4,6 +4,7 @@ var infoBox_ratingType = 'star-rating';
 (function($){
     "use strict";
 
+    /*
     function mainMap() {
 
       // Locations
@@ -298,13 +299,13 @@ var infoBox_ratingType = 'star-rating';
 
     }
 
-
     // Map Init
+
     var map =  document.getElementById('map');
     if (typeof(map) != 'undefined' && map != null) {
       google.maps.event.addDomListener(window, 'load',  mainMap);
     }
-
+    */
 
     // ---------------- Main Map / End ---------------- //
 
@@ -393,75 +394,71 @@ var infoBox_ratingType = 'star-rating';
 
     // -------------- Single Listing Map / End -------------- //
 
+})(this.jQuery);
+
+// Custom Map Marker
+// ----------------------------------------------- //
+
+function CustomMarker(latlng, map, args, markerIco) {
+  this.latlng = latlng;
+  this.args = args;
+  this.markerIco = markerIco;
+  this.setMap(map);
+}
+
+CustomMarker.prototype = new google.maps.OverlayView();
+
+CustomMarker.prototype.draw = function() {
+
+  var self = this;
+
+  var div = this.div;
+
+  if (!div) {
+
+    div = this.div = document.createElement('div');
+    div.className = 'map-marker-container';
+
+    div.innerHTML = '<div class="marker-container">'+
+                        '<div class="marker-card">'+
+                           '<div class="front face">' + self.markerIco + '</div>'+
+                           '<div class="back face">' + self.markerIco + '</div>'+
+                           '<div class="marker-arrow"></div>'+
+                        '</div>'+
+                      '</div>'
 
 
-    // Custom Map Marker
-    // ----------------------------------------------- //
+    // Clicked marker highlight
+    google.maps.event.addDomListener(div, "click", function(event) {
+        $('.map-marker-container').removeClass('clicked infoBox-opened');
+        google.maps.event.trigger(self, "click");
+        $(this).addClass('clicked infoBox-opened');
+    });
 
-    function CustomMarker(latlng, map, args, markerIco) {
-      this.latlng = latlng;
-      this.args = args;
-      this.markerIco = markerIco;
-      this.setMap(map);
+
+    if (typeof(self.args.marker_id) !== 'undefined') {
+      div.dataset.marker_id = self.args.marker_id;
     }
 
-    CustomMarker.prototype = new google.maps.OverlayView();
+    var panes = this.getPanes();
+    panes.overlayImage.appendChild(div);
+  }
 
-    CustomMarker.prototype.draw = function() {
+  var point = this.getProjection().fromLatLngToDivPixel(this.latlng);
 
-      var self = this;
+  if (point) {
+    div.style.left = (point.x) + 'px';
+    div.style.top = (point.y) + 'px';
+  }
+};
 
-      var div = this.div;
+CustomMarker.prototype.remove = function() {
+  if (this.div) {
+    this.div.parentNode.removeChild(this.div);
+    this.div = null; $(this).removeClass('clicked');
+  }
+};
 
-      if (!div) {
+CustomMarker.prototype.getPosition = function() { return this.latlng; };
 
-        div = this.div = document.createElement('div');
-        div.className = 'map-marker-container';
-
-        div.innerHTML = '<div class="marker-container">'+
-                            '<div class="marker-card">'+
-                               '<div class="front face">' + self.markerIco + '</div>'+
-                               '<div class="back face">' + self.markerIco + '</div>'+
-                               '<div class="marker-arrow"></div>'+
-                            '</div>'+
-                          '</div>'
-
-
-        // Clicked marker highlight
-        google.maps.event.addDomListener(div, "click", function(event) {
-            $('.map-marker-container').removeClass('clicked infoBox-opened');
-            google.maps.event.trigger(self, "click");
-            $(this).addClass('clicked infoBox-opened');
-        });
-
-
-        if (typeof(self.args.marker_id) !== 'undefined') {
-          div.dataset.marker_id = self.args.marker_id;
-        }
-
-        var panes = this.getPanes();
-        panes.overlayImage.appendChild(div);
-      }
-
-      var point = this.getProjection().fromLatLngToDivPixel(this.latlng);
-
-      if (point) {
-        div.style.left = (point.x) + 'px';
-        div.style.top = (point.y) + 'px';
-      }
-    };
-
-    CustomMarker.prototype.remove = function() {
-      if (this.div) {
-        this.div.parentNode.removeChild(this.div);
-        this.div = null; $(this).removeClass('clicked');
-      }
-    };
-
-    CustomMarker.prototype.getPosition = function() { return this.latlng; };
-
-    // -------------- Custom Map Marker / End -------------- //
-
-
-
-})(this.jQuery);
+// -------------- Custom Map Marker / End -------------- //
