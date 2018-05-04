@@ -31,6 +31,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.get('/', (req, res) => {
   const model = {
     currentPage: 'Home',
+    sticky: 'yes',
   };
 
   res.render('pages/index', model);
@@ -40,6 +41,7 @@ app.get('/', (req, res) => {
 app.get('/parks', (req, res) => {
   const model = {
     currentPage: 'Parks',
+    sticky: 'no',
   };
 
   res.render('pages/parks', model);
@@ -51,6 +53,7 @@ app.get('/park/:id', (req, res) => {
   const park = _.find(Parks, p => p.id === parseInt(req.params.id, 10));
   const model = {
     currentPage: park.name,
+    sticky: 'yes',
     park,
   };
 
