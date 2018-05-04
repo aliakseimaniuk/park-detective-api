@@ -31,6 +31,7 @@ const busStops= {
       return _.filter(stops, { stopid: args.stopid })
     } else if (args.stopname) {
       return _.filter(stops, s => _.includes(s.stopname, args.stopname))
+    }
     return stops;
   }
 };
