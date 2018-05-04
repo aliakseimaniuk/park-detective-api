@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import _ from 'lodash';
 import expressGraphQL from 'express-graphql';
 import { printSchema } from 'graphql';
 import path from 'path';
@@ -46,11 +47,12 @@ app.get('/parks', (req, res) => {
 
 // park page
 app.get('/park/:id', (req, res) => {
+  // TODO: Move find logic to middleware service.
   const model = {
-    currentPage: 'Park',
+    currentPage: 'Home',
+    park: _.find(Parks, p => p.id === parseInt(req.params.id, 10)),
   };
-
-  res.render('pages/parks', model);
+  res.render('pages/park', model);
 });
 
 export default app;
