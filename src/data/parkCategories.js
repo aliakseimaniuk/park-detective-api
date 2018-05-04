@@ -1,5 +1,5 @@
 const ParkCategories = {
-  categories: ['Family', 'Sport', 'Fun', 'Romantic', 'Nature', 'Adventures'],
+  categories: ['Family', 'Sport', 'Fun', 'Romance', 'Nature', 'Adventure'],
 };
 
 export default ParkCategories;
