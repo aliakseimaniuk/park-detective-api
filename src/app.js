@@ -4,6 +4,7 @@ import expressGraphQL from 'express-graphql';
 import { printSchema } from 'graphql';
 import path from 'path';
 import schema from './graphqlSchema';
+import Parks from './data/parks';
 
 const app = express();
 
@@ -43,10 +44,10 @@ app.get('/parks', (req, res) => {
   res.render('pages/parks', model);
 });
 
-// parks page
+// park page
 app.get('/park/:id', (req, res) => {
   const model = {
-    currentPage: 'Parks',
+    currentPage: 'Park',
   };
 
   res.render('pages/parks', model);
