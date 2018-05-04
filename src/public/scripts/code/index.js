@@ -18,21 +18,21 @@
             .val(item)
             .text(item),
         );
+      }
 
-        for (var i = 0; i < data.parkCategories.categories.length; i++) {
-          var item = data.parkCategories.categories[i];
-          //TODO: Retrieve amount of parks per category from server.
-          var model = {
-            href: '/parks?category=' + item,
-            imageUrl: CATEGORY_IMAGES[item],
-            title: item,
-            countOfItem: Math.floor(Math.random() * 100) + 2,
-          };
+      for (var i = 0; i < data.parkCategories.categories.length; i++) {
+        var item = data.parkCategories.categories[i];
+        //TODO: Retrieve amount of parks per category from server.
+        var model = {
+          href: '/parks?category=' + item,
+          imageUrl: CATEGORY_IMAGES[item],
+          title: item,
+          countOfItem: Math.floor(Math.random() * 100) + 2,
+        };
 
-          var tmpl = $.templates(popularCategoryTmpl);
-          var html = tmpl.render(model);
-          $('#categoryCarousel').append(html);
-        }
+        var tmpl = $.templates(popularCategoryTmpl);
+        var html = tmpl.render(model);
+        $('#categoryCarousel').append(html);
       }
 
       initCategoriesSlick();

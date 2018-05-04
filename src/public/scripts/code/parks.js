@@ -8,6 +8,97 @@
 
     $('#searchByTextInput').val(searchText);
     $('#autocomplete-input').val(locationText);
+
+    var _graph = graphql(GRAPHQL_API_URL);
+    var _query = _graph(`{
+      parks {
+        id
+        name
+        category
+        amenities
+        mainImageUrl
+        address {
+          streetAddress
+          city
+          zipCode
+        }
+        location {
+          latitude
+          longitude
+        }
+      }
+      parkCategories {
+        categories
+      }
+      parkAmenities {
+        amenities
+      }
+    }`);
+
+    _query().then(function(data) {
+      initCategories(data.parkCategories.categories, category);
+    });
   });
 
+  function initCategories(categories, selectedCategory) {
+    if (categories.indexOf(selectedCategory) >= 0) {
+      var inputHtml =
+        '<input id="check-0" type="checkbox" name="check" class="all"><label for="check-0">All Categories</label>';
+      $('#categoriesFilterLeft').append(inputHtml);
+    } else {
+      var inputHtml =
+        '<input id="check-0" type="checkbox" name="check" checked class="all"><label for="check-0">All Categories</label>';
+      $('#categoriesFilterLeft').append(inputHtml);
+    }
+
+    var middle = Math.floor(categories.length / 2);
+
+    for (var i = 0; i < middle; i++) {
+      renderCategory(
+        '#categoriesFilterLeft',
+        selectedCategory,
+        categories[i],
+        i + 1,
+      );
+    }
+
+    for (var i = middle; i < categories.length; i++) {
+      renderCategory(
+        '#categoriesFilterRight',
+        selectedCategory,
+        categories[i],
+        i + 1,
+      );
+    }
+
+    // "All" checkbox
+    $('.checkboxes.categories input').on('change', function() {
+      if ($(this).hasClass('all')) {
+        $(this)
+          .parents('.checkboxes')
+          .find('input')
+          .prop('checked', false);
+        $(this).prop('checked', true);
+      } else {
+        $('.checkboxes input.all').prop('checked', false);
+      }
+    });
+  }
+
+  function renderCategory(selector, selectedCategory, item, index) {
+    var model = {
+      name: item,
+      checked: item === selectedCategory ? 'checked' : '',
+      index: index,
+    };
+
+    var tmpl = $.templates(categoryTmpl);
+    var html = tmpl.render(model);
+    $(selector).append(html);
+  }
+
+  var categoryTmpl = `
+      <input id="check-{{:index}}" type="checkbox" name="check" {{:checked}}>
+      <label for="check-{{:index}}">{{:name}}</label>
+    `;
 })(this.jQuery);
