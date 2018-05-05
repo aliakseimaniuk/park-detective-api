@@ -1,4 +1,4 @@
-var GRAPHQL_API_URL = 'https://park-detective-api.herokuapp.com/graphql';
+var GRAPHQL_API_URL = 'http://localhost:3000/graphql';
 
 var CATEGORY_IMAGES = {
   Family: '/images/category/family/family3.jpg',

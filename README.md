@@ -24,3 +24,7 @@ npm install
 ``` bash
 npm run dev
 ```
+
+API project is available on: `http://localhost:3000/graphql/`
+
+UI project is available on: `http://localhost:3000/`
