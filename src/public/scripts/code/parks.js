@@ -2,12 +2,12 @@
   'use strict';
 
   var categoryTmpl = `
-      <input id="check-{{:index}}" type="checkbox" name="check" {{:checked}}>
+      <input id="check-{{:index}}" type="checkbox" data-name="{{:name}}" name="check" {{:checked}}>
       <label for="check-{{:index}}">{{:name}}</label>
     `;
 
   var amenityTmpl = `
-    <input id="check-a-{{:index}}" type="checkbox" name="check">
+    <input id="check-a-{{:index}}" type="checkbox" data-name="{{:name}}" name="checkAmenity">
     <label for="check-a-{{:index}}">{{:name}}</label>
   `;
 
@@ -47,22 +47,6 @@
 
     var _graph = graphql(GRAPHQL_API_URL);
     var _query = _graph(`{
-      parks {
-        id
-        name
-        category
-        amenities
-        mainImageUrl
-        address {
-          streetAddress
-          city
-          zipCode
-        }
-        location {
-          latitude
-          longitude
-        }
-      }
       parkCategories {
         categories
       }
@@ -74,43 +58,29 @@
     _query().then(function(data) {
       initCategories(data.parkCategories.categories, category);
       initAmenities(data.parkAmenities.amenities);
-      initParks(data.parks);
 
-      var locations = [];
-      for (var i = 0; i < data.parks.length; i++) {
-        var p = data.parks[i];
-        var l = [
-          locationData(
-            '/park/' + p.id,
-            p.mainImageUrl,
-            p.name,
-            buildAddressString(p.address),
-            5,
-            1000,
-          ),
-          p.location.latitude,
-          p.location.longitude,
-          i + 1,
-          '<i class="im im-icon-Tree-2"></i>',
-        ];
-        locations.push(l);
-      }
+      search();
 
-      var map = document.getElementById('map');
-      if (typeof map != 'undefined' && map != null) {
-        google.maps.event.addDomListener(window, 'load', mainMap(locations));
-      }
+      $('.panel-apply').click(function() {
+        search();
+      });
+
+      $('#searchByTextInput').keyup(function() {
+        delay(function() {
+          search();
+        }, 500);
+      });
     });
   });
 
   function initCategories(categories, selectedCategory) {
     if (categories.indexOf(selectedCategory) >= 0) {
       var inputHtml =
-        '<input id="check-0" type="checkbox" name="check" class="all"><label for="check-0">All Categories</label>';
+        '<input id="check-0" type="checkbox" name="check" data-name="All Categories" class="all"><label for="check-0">All Categories</label>';
       $('#categoriesFilterLeft').append(inputHtml);
     } else {
       var inputHtml =
-        '<input id="check-0" type="checkbox" name="check" checked class="all"><label for="check-0">All Categories</label>';
+        '<input id="check-0" type="checkbox" name="check" data-name="All Categories" checked class="all"><label for="check-0">All Categories</label>';
       $('#categoriesFilterLeft').append(inputHtml);
     }
 
@@ -184,6 +154,7 @@
   }
 
   function initParks(parks) {
+    $('#parkList').html('');
     for (var i = 0; i < parks.length; i++) {
       var item = parks[i];
 
@@ -213,8 +184,6 @@
     locationImg,
     locationTitle,
     locationAddress,
-    locationRating,
-    locationRatingCounter,
   ) {
     return (
       '' +
@@ -583,4 +552,118 @@
       }
     }
   }
+
+  function search() {
+    var searchText = $('#searchByTextInput').val();
+    var location = $('#autocomplete-input').val();
+
+    var selectedCategories = [];
+    $('.categories input[name=check]').each(function() {
+      if ($(this).is(':checked')) {
+        selectedCategories.push($(this).data('name'));
+      }
+    });
+
+    var selectedAmenities = [];
+    $('.amenities input[name=checkAmenity]').each(function() {
+      if ($(this).is(':checked')) {
+        selectedAmenities.push($(this).data('name'));
+      }
+    });
+
+    var _graph = graphql(GRAPHQL_API_URL);
+    var _parksQuery = _graph(`{
+      parks {
+        id
+        name
+        category
+        amenities
+        mainImageUrl
+        address {
+          streetAddress
+          city
+          zipCode
+        }
+        location {
+          latitude
+          longitude
+        }
+      }
+    }`);
+
+    _parksQuery().then(function(data) {
+      var parks = data.parks;
+
+      // Filtering
+      if (searchText) {
+        parks = $.grep(parks, function(p) {
+          return p.name.toLowerCase().indexOf(searchText.toLowerCase()) >= 0;
+        });
+      }
+
+      if (
+        selectedCategories &&
+        selectedCategories.length > 0 &&
+        selectedCategories.indexOf('All Categories') < 0
+      ) {
+        parks = $.grep(parks, function(p) {
+          for (var i = 0; i < selectedCategories.length; i++) {
+            if (p.category.indexOf(selectedCategories[i]) >= 0) {
+              return true;
+            }
+          }
+
+          return false;
+        });
+      }
+
+      if (selectedAmenities && selectedAmenities.length > 0) {
+        parks = $.grep(parks, function(p) {
+          for (var i = 0; i < selectedAmenities.length; i++) {
+            if (p.amenities.indexOf(selectedAmenities[i]) >= 0) {
+              return true;
+            }
+          }
+
+          return false;
+        });
+      }
+
+      // Filtering End
+
+      initParks(parks);
+      $('.showing-results').html(parks.length + ' Parks Found');
+
+      var locations = [];
+      for (var i = 0; i < parks.length; i++) {
+        var p = parks[i];
+        var l = [
+          locationData(
+            '/park/' + p.id,
+            p.mainImageUrl,
+            p.name,
+            buildAddressString(p.address),
+          ),
+          p.location.latitude,
+          p.location.longitude,
+          i + 1,
+          '<i class="im im-icon-Tree-2"></i>',
+        ];
+        locations.push(l);
+      }
+
+      var map = document.getElementById('map');
+      if (typeof map != 'undefined' && map != null) {
+        google.maps.event.addDomListener(window, 'load', mainMap(locations));
+      }
+    });
+  }
 })(this.jQuery);
+
+var delay = (function() {
+  var timer = 0;
+  return function(callback, ms) {
+    clearTimeout(timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
