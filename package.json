@@ -1,22 +1,25 @@
 {
   "name": "park_detective",
   "version": "1.0.0",
-  "description": "",
+  "description": "API that serves up information about Delaware parks.",
   "main": "server.js",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
     "fix": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" --fix .",
-    "pre-start": "npm run -s build",
+    "prestart": "npm run -s build",
     "start": "node dist/server.js",
     "dev": "nodemon src/server.js --exec \"node -r dotenv/config -r babel-register\"",
     "clean": "rimraf dist",
     "build": "npm run clean && mkdir dist && babel src -s -D -d dist"
   },
   "dependencies": {
+    "cors": "^2.8.4",
+    "ejs": "2.5.9",
     "express": "4.16.3",
     "express-graphql": "0.6.12",
     "graphql": "0.13.2",
-    "lodash": "4.17.10"
+    "lodash": "4.17.10",
+    "request": "^2.85.0"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
@@ -39,5 +42,15 @@
     "nodemon": "1.17.3",
     "rimraf": "2.6.2",
     "prettier": "1.12.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliakseimaniuk/park-detective-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aliakseimaniuk/park-detective-api/issues"
+  },
+  "homepage": "https://github.com/aliakseimaniuk/park-detective-api#readme"
 }
