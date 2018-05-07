@@ -4,6 +4,11 @@ import app from './app';
 const port = process.env.PORT || 3000;
 const host = process.env.HOSTNAME || '0.0.0.0';
 
+/* eslint-disable */
+console.log(`port: ${port}`);
+console.log(`host: ${host}`);
+/* eslint-disable */
+
 // Launch Node.js server.
 app.listen(port, host, () => {
   /* eslint-disable */
