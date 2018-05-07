@@ -16,5 +16,8 @@
     "transform-flow-strip-types",
     "transform-object-rest-spread"
   ],
+  "ignore": [
+    "src/public/"
+  ],
   "retainLines": true
 }
