@@ -37,7 +37,7 @@ const busStops = {
     stopName: { type: GraphQLString },
     latitude: { type: GraphQLFloat },
     longitude: { type: GraphQLFloat },
-    distance: { type: GraphQLFloat },
+    distanceInMeters: { type: GraphQLFloat },
   },
   resolve: (parent, args) =>
     new Promise((resolve, reject) => {
@@ -54,7 +54,7 @@ const busStops = {
             _.filter(stops, s => _.includes(s.stopName, args.stopName)),
           );
         } else if (args.latitude && args.longitude) {
-          const distance = args.distance || 10;
+          const distance = args.distanceInMeters || 1600;
           const l1 = {
             latitude: args.latitude,
             longitude: args.longitude,
