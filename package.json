@@ -10,13 +10,15 @@
     "start": "node dist/server.js",
     "dev": "nodemon src/server.js --exec \"node -r dotenv/config -r babel-register\"",
     "clean": "rimraf dist",
-    "build": "npm run clean && mkdir dist && babel src -s -D -d dist"
+    "build": "npm run clean && mkdir dist && babel src -s -D -d dist",
+    "debug": "node --nolazy --inspect-brk=9229 server.js"
   },
   "dependencies": {
     "cors": "^2.8.4",
     "ejs": "2.5.9",
     "express": "4.16.3",
     "express-graphql": "0.6.12",
+    "geolib": "2.0.24",
     "graphql": "0.13.2",
     "lodash": "4.17.10",
     "request": "^2.85.0"
