@@ -1,39 +1,40 @@
-import { GraphQLList, GraphQLString, GraphQLInt, GraphQLFloat } from 'graphql';
+import { GraphQLList, GraphQLString } from 'graphql';
 import _ from 'lodash';
 import BusType from './BusType';
 
-var request = require("request");
+const request = require('request');
 
-var options = {
+const options = {
   method: 'GET',
   url: 'https://data.delaware.gov/resource/n5hx-5mgi.json',
 };
 
-const busStops= {
+const busStops = {
   type: new GraphQLList(BusType),
   description: 'List of all matching parks.',
   args: {
-    // stopid, lon, stopname, lat
-    stopid: { type: GraphQLString},
-    stopname: { type: GraphQLString },
+    stopId: { type: GraphQLString },
+    stopName: { type: GraphQLString },
   },
   resolve: (parent, args) => {
-    var stops = new Promise(function(resolve, reject) {
-      request(options, function(error, response, body){
+    const stops = new Promise((resolve, reject) => {
+      request(options, (error, response, body) => {
         if (error) {
-          reject(err)
+          reject(error);
         } else {
-          resolve(JSON.parse(body))
+          resolve(JSON.parse(body));
         }
-      })
-    })
-    if (args.stopid) {
-      return _.filter(stops, { stopid: args.stopid })
-    } else if (args.stopname) {
-      return _.filter(stops, s => _.includes(s.stopname, args.stopname))
+      });
+    });
+
+    if (args.stopId) {
+      return _.filter(stops, { stopId: args.stopId });
+    } else if (args.stopName) {
+      return _.filter(stops, s => _.includes(s.stopName, args.stopName));
     }
+
     return stops;
-  }
+  },
 };
 
 export default {
